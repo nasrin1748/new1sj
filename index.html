@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Python Function from JavaScript</title>
+   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Call main.py Python Function from JavaScript</h1> 
+    
+    <button id="greet-button">Get Greeting</button>
+        <button id="greet-button1">Get Greeting1</button>
+            <button id="greet-button2">Get Greeting2</button>
+                <button id="greet-button3">Get Greeting3</button>
+                <button id="greet-button4">Get Greeting4</button>
+            <button id="greet-button5">Get Greeting5</button>
+                    <button id="greet-button6">Get Greeting6</button>
+                    <button id="greet-button7">Get Greeting7</button> 
+
+    
+    <h2>Output</h2>
+    <div id="output"></div>
+     <py-config>
+        "packages" = ["pandas","html2text","numpy"]
+        [[fetch]]
+        files = ["./main.py","./main1.py","./main2.py","./main3.py","./main4.py","./main5.py","./main6.py","./main7.py"]
+   </py-config>
+
+    <py-script>
+        from js import document
+        from main import greet 
+        document.greet = greet
+        from main1 import greet1 
+        document.greet1 = greet1
+        from main2 import greet2 
+        document.greet2 = greet2
+        from main3 import greet3 
+        document.greet3 = greet3
+        from main4 import greet4 
+        document.greet4 = greet4
+        from main5 import greet5 
+        document.greet5 = greet5
+        from main6 import greet6 
+        document.greet6 = greet6
+        from main7 import greet7 
+        document.greet7 = greet7
+    </py-script>
+     <script>
+         // JavaScript to call the Python function
+        document.getElementById('greet-button').addEventListener('click', function() {
+                const result = document.greet();
+                document.getElementById('output').innerText = result;
+
+        });
+            document.getElementById('greet-button1').addEventListener('click', function() {
+                const result = document.greet1();
+                document.getElementById('output').innerText = result;
+
+        });
+           document.getElementById('greet-button2').addEventListener('click', function() {
+                const result = document.greet2();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+          document.getElementById('greet-button3').addEventListener('click', function() {
+                const result = document.greet3();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+          document.getElementById('greet-button4').addEventListener('click', function() {
+                const result = document.greet4();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+          document.getElementById('greet-button5').addEventListener('click', function() {
+                const result = document.greet5();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+          document.getElementById('greet-button6').addEventListener('click', function() {
+                const result = document.greet6();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+          document.getElementById('greet-button7').addEventListener('click', function() {
+                const result = document.greet7();
+                alert(result);
+                document.getElementById('output').innerHTML = result; 
+                //document.write(result);
+
+        });
+    </script>
+
+</body>
+</html>
